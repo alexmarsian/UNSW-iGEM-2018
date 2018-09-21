@@ -18,6 +18,10 @@ Other methods of installation are available: https://realpython.com/installing-p
 The recommended option is to install python via anaconda: https://conda.io/docs/user-guide/install/download.html 
 
 Usage:
+All commands here are executed following a call to the file. 
+On my computer this looks like: ./search.py arguments values 
+  For example: ./search.py -t RBS -r Issues F -m atgtaatgat
+  
 Type -h to see a list of possible commands the tool accepts.
 To use the tool, enter an arugment, followed by it's value.
 For example, to look for part's whose type is "RBS" (Ribosome Binding Site), type -t to denote part type followed by RBS:
