@@ -65,7 +65,6 @@ crap = tree.xpath("//part/sample_status/text()[normalize-space(.)='Discontinued'
 def fetch(arg_values, arg_key, current_tree):
 
     # Searching for parts that CONTAIN sequence motifs
-    # Currently not working - doesn't filter for parts that contain the motif
     if arg_key in ("seq_data", "part_author", "part_short_desc"):
         if arg_values[-1] == 'F' or 'f':
             fetched_parts = current_tree.xpath("//%s/text()[not(contains(normalize-space(.),'%s'))]"
@@ -74,6 +73,7 @@ def fetch(arg_values, arg_key, current_tree):
             print(arg_values[0])
             fetched_parts = current_tree.xpath("//%s/text()[contains(normalize-space(.),'%s')]"
                                                "/ancestor::part" % (arg_key, arg_values[0]))
+    # Search for parts whose sequence is an exact match to the query sequence
     elif arg_key == "seq":
         if arg_values[-1] == 'F' or 'f':
             print("Finding non-matching sequences: This may take a while...")
