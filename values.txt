@@ -1,0 +1,53 @@
+This file contains all the values that may be entered for the listed arguments
+
+All values for part_type
+Translational_Unit
+Composite
+RBS
+Temporary
+Coding
+Reporter
+Generator
+Promoter
+Terminator
+RNA
+Cell
+Plasmid
+Signalling
+Protein_Domain
+Inverter
+Plasmid_Backbone
+Project
+Device
+Scar
+Intermediate
+Tag
+DNA
+Regulatory
+Conjugation
+Primer
+Measurement
+T7
+Other
+
+
+All values for release_status
+Deleted
+Not Released
+Released HQ 2013
+
+
+All values for sample_status
+For reference only
+Discontinued
+No part sequence
+It's complicated
+Not in stock
+In stock
+
+
+All values for part_results
+Works
+Fails
+Issues
+None
