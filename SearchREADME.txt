@@ -30,8 +30,10 @@ Currently, only one value is accepted for each argument. However negative search
 To conduct a negative search, specify the argument, followed by the value, followed by F or f to denote 'False'.
 For example, to look for part's whose results did NOT fail, type -r Fails F
   -r Fails F
-Note that the argument values are not case sensitive, however they must be exact, spelling errors are not tolerated.
+Note that the argument values are case sensitive and must be exact, spelling errors are not tolerated.
+
 There are some inconsistencies in the way information is stored in the parts database, with arbitrary argument values present in some parts.
+For the author, and description arguments, again only a single argument value is accepted for now. Thus to look for all parts with author Alexander Pluto, one could enter either Alexander, or Pluto as the argument value - in most cases, using the author's surname will return a more accurate result. E.g. -a pluto
 For a full list of possible argument values for each argument, see the values.txt file.
 Each of the values present in the values.txt file is present at least once in the database, thus each should return at least 1 part.
 This file was generated using the generate_values.py file, and contains every non-redundant instance of an argument value in the database. 
