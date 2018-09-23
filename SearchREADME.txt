@@ -27,7 +27,7 @@ To use the tool, enter an arugment, followed by it's value.
 For example, to look for part's whose type is "RBS" (Ribosome Binding Site), type -t to denote part type followed by RBS:
   -t RBS
 Currently, only one value is accepted for each argument. However negative searches can be conducted for any argument value.
-To conduct a negative search, specify the argument, followed by the value, followed by F or f to denote 'False'.
+To conduct a negative search, specify the argument, followed by the value, followed by F to denote 'False'.
 For example, to look for part's whose results did NOT fail, type -r Fails F
   -r Fails F
 Note that the argument values are case sensitive and must be exact, spelling errors are not tolerated.
