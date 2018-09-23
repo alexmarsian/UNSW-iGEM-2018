@@ -4,7 +4,7 @@
 # Build the Tree to be searched with argument values
 # If you name the parts.xml file provided on github something else, change the name below to correspond
 
-infile = "parts2.xml"
+infile = "parts.xml"
 outfile = "cleaned_file.xml"
 
 delete_list = ['<?xml version="1.0" encoding="utf-8" standalone="yes" ?>',
