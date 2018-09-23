@@ -49,7 +49,7 @@ if not any(args.values()):
 
 # Build the Tree to be searched with argument values
 # If you name the parts.xml file provided on github something else, change the name below to correspond
-tree = etree.parse('parts.xml')
+tree = etree.parse('cleaned_file.xml')
 root = tree.getroot()
 
 crap = tree.xpath("//part/sample_status/text()[normalize-space(.)='Discontinued']/../..")
@@ -66,7 +66,7 @@ def fetch(arg_values, arg_key, current_tree):
 
     # Searching for parts that CONTAIN sequence motifs
     if arg_key in ("seq_data", "part_author", "part_short_desc"):
-        if arg_values[-1] == 'F' or 'f':
+        if arg_values[-1] == 'F':
             fetched_parts = current_tree.xpath("//%s/text()[not(contains(normalize-space(.),'%s'))]"
                                                "/ancestor::part" % (arg_key, arg_values[0]))
         else:
@@ -75,7 +75,7 @@ def fetch(arg_values, arg_key, current_tree):
                                                "/ancestor::part" % (arg_key, arg_values[0]))
     # Search for parts whose sequence is an exact match to the query sequence
     elif arg_key == "seq":
-        if arg_values[-1] == 'F' or 'f':
+        if arg_values[-1] == 'F':
             print("Finding non-matching sequences: This may take a while...")
             fetched_parts = current_tree.xpath("//part/sequences/seq_data/text()[not(normalize-space(.)='%s')]"
                                                "/ancestor::part" % (arg_values[0]))
@@ -84,7 +84,7 @@ def fetch(arg_values, arg_key, current_tree):
                                                "/ancestor::part" % (arg_values[0]))
     # Search for all other parts that MATCH specified arguments
     else:
-        if arg_values[-1] == 'F' or 'f':
+        if arg_values[-1] == 'F':
             fetched_parts = current_tree.xpath("//part/%s/text()[not(normalize-space(.)='%s')]/../.."
                                                "" % (arg_key, arg_values[0]))
         else:
