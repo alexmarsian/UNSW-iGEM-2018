@@ -10,12 +10,16 @@ Currently the tool only returns the name (BBa ID) of parts that meet the user-sp
 
 Set Up:
 
-Download the parts.xml file and place it in a folder.
+Download the cleaned_file.xml file and place it in a folder.
 Download the search.py file and place it in the same folder.
 The tool runs using python 3, making use of the argparse and lxml modules. 
 To install python 3, go here: https://www.python.org/downloads/
 Other methods of installation are available: https://realpython.com/installing-python/ 
 The recommended option is to install python via anaconda: https://conda.io/docs/user-guide/install/download.html 
+
+The lxml module is required, to install the lxml module go here: https://lxml.de/installation.html
+If you have downloaded python through anaconda, you should have the pip package installed, 
+then to install lxml is simple, just type 'pip install lxml'
 
 Usage:
 All commands here are executed following a call to the file. 
