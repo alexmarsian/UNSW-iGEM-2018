@@ -8,15 +8,16 @@ N = 25;
     
 % Build the model at various values of d - gradually brings the enzymes
 % closer together
-for i = 2:-0.1:-0.8
+distance = 1500;
+for i = 3.8:-0.1:0.2
     
-    GEOMETRY_PARAMETERS = struct('a', 4.0, 'c', 1.0, 'r', 0.1, 'd', i);
+    GEOMETRY_PARAMETERS = struct('a', 4.0, 'c', i, 'r', 0.1);
 
     myufunction = @(region,state) -(vmax2*state.u)/(state.u+km2);
     
     % Create a model using the domain file to build the geometry
     model = createpde();
-    geometryFromEdges(model, @domain)
+    geometryFromEdges(model, @domain2)
     applyBoundaryCondition(model, 'neumann', 'Edge', 2,'q',0.0, 'g', vmax);
     applyBoundaryCondition(model, 'neumann', 'Edge', 4,'q',0.0, 'g', myufunction);
     applyBoundaryCondition(model, 'neumann', 'Edge', [1, 3, 5], ...
@@ -32,7 +33,7 @@ for i = 2:-0.1:-0.8
 
     figure(1);
     axis tight manual % this ensures that getframe() returns a consistent size
-    filename = 'diffusion.gif';
+    %filename = 'diffusion.gif';
     pdeplot(model, 'XYData', u(:,end), 'ZData', u(:,end), 'Mesh', 'on');
     c = colorbar;
     c.Label.String = 'Concentration (mM)';
@@ -48,11 +49,11 @@ for i = 2:-0.1:-0.8
     
     % Build a gif of the diffusion over the mesh, this can be removed if it
     % causes errors
-    if i == 2
-        gif(filename);
-    else
-        gif
-    end     
+%     if i == 2
+%         gif(filename);
+%     else
+%         gif
+%     end     
 
     figure(2)
     pdegplot(model, 'edgelabels', 'on')
@@ -78,8 +79,6 @@ for i = 2:-0.1:-0.8
     % They begin at 1500 angstroms apart, each loop brings them 50 closer
     if i ~= 2
         distance = distance - 50;
-    else
-        distance = 1500;
     end
 
     figure(3)
