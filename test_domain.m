@@ -1,7 +1,7 @@
 global GEOMETRY_PARAMETERS
-GEOMETRY_PARAMETERS = struct('a', 4.0, 'c', 3.0, 'r', 0.1, 'd', 0);
+GEOMETRY_PARAMETERS = struct('a', 4.0, 'c', 3.0, 'r', 0.1);
 figure(1)
-pdegplot(@domain2, 'EdgeLabels', 'on', 'SubdomainLabels', 'on')
+pdegplot(@domain, 'EdgeLabels', 'on', 'SubdomainLabels', 'on')
 axis equal
 axis off
 
