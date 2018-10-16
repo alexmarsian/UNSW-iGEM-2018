@@ -17,7 +17,7 @@ for i = 3.8:-0.1:0.2
     
     % Create a model using the domain file to build the geometry
     model = createpde();
-    geometryFromEdges(model, @domain2)
+    geometryFromEdges(model, @domain)
     applyBoundaryCondition(model, 'neumann', 'Edge', 2,'q',0.0, 'g', vmax);
     applyBoundaryCondition(model, 'neumann', 'Edge', 4,'q',0.0, 'g', myufunction);
     applyBoundaryCondition(model, 'neumann', 'Edge', [1, 3, 5], ...
