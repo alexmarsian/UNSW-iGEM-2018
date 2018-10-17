@@ -1,5 +1,7 @@
 This is the documentation for the UNSW iGEM 2018 team's search tool, built to operate on the iGEM parts database.
 
+Before reading this file, read the BUILDREADME.txt file.
+
 The iGEM parts main page is available here: http://parts.igem.org/Main_Page 
 
 This tool is not designed to replace the database, but rather be used in conjunction with the database, 
@@ -8,10 +10,11 @@ Multi-parameter, and negative searches are possible using the tool.
 From the parts returned by a search, users can look up the parts in the registry for more detail. 
 Currently the tool only returns the name (BBa ID) of parts that meet the user-specified search criteria. 
 
+Before running the search.py file you need to build the xml file using build.py
+
 Set Up:
 
-Download the cleaned_file.xml file and place it in a folder.
-Download the search.py file and place it in the same folder.
+Download the search.py file and place it in the same folder as the build.py and associated files.
 The tool runs using python 3, making use of the argparse and lxml modules. 
 To install python 3, go here: https://www.python.org/downloads/
 Other methods of installation are available: https://realpython.com/installing-python/ 
