@@ -1,6 +1,11 @@
 # UNSW-iGEM-2018
 All the files for the search tool, and matlab models for the UNSW iGEM team 2018, created by Alex
 
+To run these files, python 3 must be installed.
+
+Python 3 can be downloaded from here:
+  https://www.python.org/downloads/
+
 Read the SearchREADME.txt and BuildREADME.txt files!
 
 All of the .py files contain a first line of the type: #! /Users/Amarsing/anaconda3/bin/python
