@@ -25,3 +25,6 @@ for i, line in enumerate(fin):
     fout.write(line)
 fin.close()
 fout.close()
+
+with open(outfile, "a") as f:
+    f.write("</part_list></rsbpml>)
