@@ -163,4 +163,7 @@ for i, line in enumerate(fin):
 fin.close()
 fout.close()
 
+with open(outfile, "a") as f:
+    f.write("</part_list></rsbpml>)
+
 print("Done. Cleaned XML file is now available in %s" % outfile)
